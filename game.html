@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hazard Hunt: Simulasi Inspeksi K3 Gudang | PT Pan Era Group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+
+<section id="scene-game" class="scene active">
+    <header class="app-bar"><div class="brand">K3 BONGKAR MUAT</div><span class="crumb">Simulasi Inspeksi &middot; Hazard Hunt</span><button class="btn btn-ghost" type="button" data-go="scene-02">Beranda</button></header>
+    <div class="game-stage">
+<main id="gameContainer">
+    <div id="canvasWrapper">
+        <canvas id="gameCanvas" width="800" height="450" aria-label="Area inspeksi K3"></canvas>
+        <div id="damageFlash"></div>
+
+        <div id="topUI">
+            <div class="ui-group">
+                <button class="slot active" id="slotHand" type="button" title="Tangan [1]" tabindex="-1">✋</button>
+                <button class="slot" id="slotCamera" type="button" title="Kamera [2]" tabindex="-1">📷</button>
+                <div class="ui-card"><span>HP</span><div id="hpBarContainer"><div id="hpBar"></div></div></div>
+            </div>
+            <div class="ui-group">
+                <div class="ui-card" id="scoreDisplay">Skor 0</div>
+                <button class="ui-button" id="btnView" type="button" tabindex="-1" title="Ganti sudut pandang [V]">👁 Samping</button>
+            </div>
+        </div>
+
+        <div id="missionBar">
+            <div class="chip" id="zoneChip">📍 Area Pre-Check</div>
+            <div class="chip" id="apdChip">APD <span id="apdRow"></span> <span id="apdCount">0/5</span></div>
+            <div class="chip" id="hazChip">🔍 Bahaya 0/5</div>
+            <div class="chip" id="sigChip">✋ Sinyal 0/1</div>
+        </div>
+
+        <div id="staBanner" class="hidden">
+            <span class="stop" id="staStop">STOP</span><span class="think" id="staThink">THINK</span><span class="act" id="staAct">ACT</span>
+        </div>
+        <div id="statusMessage" role="status"></div>
+    </div>
+
+    <div id="controlDock">
+        <div id="mobileControls">
+            <div class="dpad">
+                <span></span><button class="control" id="btnUp" type="button" tabindex="-1">↑</button><span></span>
+                <button class="control" id="btnLeft" type="button" tabindex="-1">←</button><span></span><button class="control" id="btnRight" type="button" tabindex="-1">→</button>
+                <span></span><button class="control" id="btnDown" type="button" tabindex="-1">↓</button><span></span>
+            </div>
+            <button class="control" id="btnJump" type="button" tabindex="-1">Lompat</button>
+        </div>
+        <div id="dockActions">
+            <button class="ui-button" id="btnEquipAPD" type="button" tabindex="-1">🛡️ Pakai APD [F]</button>
+            <button class="ui-button" id="btnSignal" type="button" tabindex="-1">✋ Sinyal [G]</button>
+            <button class="ui-button" id="btnCapture" type="button" tabindex="-1">📸 Foto [E]</button>
+        </div>
+    </div>
+
+    <!-- START SCREEN -->
+    <section class="overlay" id="startScreen">
+        <div class="card">
+            <div class="kicker">SERIOUS GAME • PELATIHAN K3 BONGKAR MUAT</div>
+            <h1>Hazard Hunt: Inspeksi K3 Gudang</h1>
+            <p>Anda adalah inspektur K3 baru. Lengkapi APD, telusuri gudang, potret semua bahaya, dan lewati jalur forklift dengan prosedur yang benar.</p>
+            <div class="reg"><b>Modul 1 – Prinsip &amp; Regulasi:</b> UU No. 1 Tahun 1970 tentang Keselamatan Kerja dan PP No. 50 Tahun 2012 tentang Sistem Manajemen K3 (SMK3) mewajibkan pencegahan kecelakaan dan penyakit akibat kerja, termasuk identifikasi bahaya, pengendalian risiko, dan penggunaan APD.</div>
+            <div class="mods">
+                <div class="mod"><b>Modul 2 – Bahaya</b>5 bahaya: forklift, rak/palet miring, manual handling, tumpahan oli, titik terjepit. Potret dengan kamera.</div>
+                <div class="mod"><b>Modul 3 – APD</b>Kumpulkan 5 APD wajib di Area Pre-Check sebelum gerbang Zona Bahaya terbuka.</div>
+                <div class="mod"><b>Modul 4 – STOP-THINK-ACT</b>Berdiri di Zona Aman (hijau), lakukan kontak mata &amp; beri sinyal ke operator forklift sebelum melintas.</div>
+                <div class="mod"><b>Misi Akhir</b>Foto 5 bahaya + beri sinyal minimal 1x, lalu menuju PINTU KELUAR di ujung kanan.</div>
+            </div>
+            <div class="keys">
+                <kbd>A</kbd><kbd>D</kbd>/<kbd>←</kbd><kbd>→</kbd> gerak · <kbd>W</kbd><kbd>S</kbd>/<kbd>↑</kbd><kbd>↓</kbd> kedalaman (Mode Atas) · <kbd>Space</kbd> lompat (hindari oli) · <kbd>V</kbd> ganti sudut pandang<br>
+                <kbd>2</kbd> kamera + arahkan mouse/sentuh ke objek lalu <kbd>E</kbd> foto · <kbd>F</kbd> pakai APD · <kbd>G</kbd> sinyal kontak mata
+            </div>
+            <button class="primary" id="btnStart" type="button">▶ Mulai Inspeksi</button>
+        </div>
+    </section>
+
+    <!-- MODAL EDUKASI -->
+    <section class="overlay hidden" id="eduModal">
+        <div class="card">
+            <div class="modal-head">
+                <div class="modal-icon" id="mIcon"></div>
+                <div><h2 id="mTitle"></h2><div class="modal-sub" id="mSub"></div></div>
+            </div>
+            <div class="sect why"><b>MENGAPA BERBAHAYA?</b><span id="mWhy"></span></div>
+            <div class="sect fix"><b>CARA PENCEGAHAN / PENGENDALIAN</b><span id="mFix"></span></div>
+            <div class="sect ref"><b>RUJUKAN MATERI</b><span id="mRef"></span></div>
+            <button class="primary" id="btnModalClose" type="button">Lanjutkan Inspeksi ▶</button>
+        </div>
+    </section>
+
+    <!-- RESULT SCREEN -->
+    <section class="overlay hidden" id="resultScreen">
+        <div class="card" id="resultBody"></div>
+    </section>
+</main>
+    </div>
+</section>
+
+<script src="js/app.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>

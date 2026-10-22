@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modul Belajar K3 Bongkar Muat | PT Pan Era Group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ SCENE 02: MENU UTAMA ============ -->
+<section id="scene-02" class="scene active">
+    <header class="app-bar">
+        <div class="brand"><svg width="28" height="21" viewBox="0 0 36 27" aria-hidden="true"><path d="M5 25V16C5 8 11 2 18 2s13 6 13 14v9z" fill="#f5b82e"/><rect y="21" width="36" height="6" rx="3" fill="#e0a010"/></svg>K3 BONGKAR MUAT</div>
+        <span class="crumb">Menu Utama</span>
+    </header>
+    <div class="page">
+        <h1>Pilih Modul Belajar</h1>
+        <p class="lead">Urutan bebas. Selesaikan keempat modul untuk membuka Kuis Akhir.</p>
+
+        <div class="module-grid">
+            <article class="module-card" data-module="1">
+                <div class="module-art art-blue"><svg viewBox="0 0 64 72" aria-hidden="true"><path d="M5 4h54v34c0 13-12 24-27 31C17 62 5 51 5 38V4Z" fill="currentColor"/><path d="m19 36 9 9 19-21" fill="none" stroke="#3262ad" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/></svg></div>
+                <span class="badge-done" hidden aria-label="Selesai">&#10003;</span>
+                <div class="module-body">
+                    <div class="eyebrow">Modul 1</div>
+                    <h2>Prinsip Dasar K3</h2>
+                    <p>Pengertian, tujuan, landasan hukum, dan regulasi K3.</p>
+                    <div class="module-meta"><span>Progres</span><span data-pct>0%</span></div>
+                    <div class="bar"><span data-fill></span></div>
+                    <button class="btn btn-secondary" type="button" data-go="scene-03">Buka</button>
+                </div>
+            </article>
+            <article class="module-card" data-module="2">
+                <div class="module-art art-orange"><svg viewBox="0 0 80 70" aria-hidden="true"><path d="M40 6 75 65H5L40 6Z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="5"/><path d="M40 27v18m0 9v1" stroke="currentColor" stroke-linecap="round" stroke-width="5"/></svg></div>
+                <span class="badge-done" hidden aria-label="Selesai">&#10003;</span>
+                <div class="module-body">
+                    <div class="eyebrow">Modul 2</div>
+                    <h2>Identifikasi &amp; Pengendalian Bahaya</h2>
+                    <p>Mengenali bahaya, menilai risiko, dan mengendalikannya.</p>
+                    <div class="module-meta"><span>Progres</span><span data-pct>0%</span></div>
+                    <div class="bar"><span data-fill></span></div>
+                    <button class="btn btn-secondary" type="button" data-go="scene-06">Buka</button>
+                </div>
+            </article>
+            <article class="module-card" data-module="3">
+                <div class="module-art art-green"><svg viewBox="0 0 64 56" aria-hidden="true"><path d="M8 44V32C8 17 18 6 32 6s24 11 24 26v12z" fill="currentColor"/><rect x="2" y="40" width="60" height="10" rx="4" fill="currentColor"/><rect x="29" y="6" width="6" height="30" fill="#2f9a56"/></svg></div>
+                <span class="badge-done" hidden aria-label="Selesai">&#10003;</span>
+                <div class="module-body">
+                    <div class="eyebrow">Modul 3</div>
+                    <h2>Memilih APD</h2>
+                    <p>Kenali 5 APD wajib untuk pekerjaan bongkar muat.</p>
+                    <div class="module-meta"><span>Progres</span><span data-pct>0%</span></div>
+                    <div class="bar"><span data-fill></span></div>
+                    <button class="btn btn-secondary" type="button" data-go="scene-12">Buka</button>
+                </div>
+            </article>
+            <article class="module-card" data-module="4">
+                <div class="module-art art-navy"><svg viewBox="0 0 64 72" aria-hidden="true"><rect x="5" y="3" width="54" height="66" rx="9" fill="currentColor"/><path d="m16 22 3 3 5-6m-8 18 3 3 5-6m-8 18 3 3 5-6" fill="none" stroke="#7fdc9d" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/><path d="M32 22h18M32 39h18M32 56h18" stroke="#203d70" stroke-width="4" opacity=".6"/></svg></div>
+                <span class="badge-done" hidden aria-label="Selesai">&#10003;</span>
+                <div class="module-body">
+                    <div class="eyebrow">Modul 4</div>
+                    <h2>Prosedur Kerja Aman</h2>
+                    <p>Lima langkah kerja aman dan kuis skenario forklift.</p>
+                    <div class="module-meta"><span>Progres</span><span data-pct>0%</span></div>
+                    <div class="bar"><span data-fill></span></div>
+                    <button class="btn btn-secondary" type="button" data-go="scene-14">Buka</button>
+                </div>
+            </article>
+        </div>
+
+        <div class="home-footer">
+            <button class="btn btn-secondary" type="button" id="btn-map">Peta Belajar</button>
+            <div class="overall">
+                <strong id="overall-text">Progres keseluruhan: 0 dari 4 modul</strong>
+                <div class="bar"><span id="overall-fill"></span></div>
+            </div>
+            <button class="btn btn-primary" type="button" id="btn-final" data-go="scene-18" disabled>Kuis Akhir (terkunci)</button>
+        </div>
+
+        <div class="sim-card">
+            <div>
+                <h2>Simulasi Inspeksi: Hazard Hunt</h2>
+                <p>Game inspeksi gudang: lengkapi APD, potret 5 bahaya, dan lewati jalur forklift dengan STOP-THINK-ACT. Tidak mempengaruhi progres modul.</p>
+            </div>
+            <button class="btn btn-primary" type="button" data-go="scene-game">Main Simulasi</button>
+        </div>
+    </div>
+
+    <dialog id="map-dialog" aria-labelledby="map-title">
+        <div class="dlg">
+            <div class="dlg-head"><h2 id="map-title">Peta Alur Belajar</h2><button class="dlg-close" type="button" id="map-close" aria-label="Tutup">&times;</button></div>
+            <p class="fine">Anda bebas memilih urutan modul. Selesaikan keempat modul untuk membuka Kuis Akhir dan lencana.</p>
+            <div class="map-grid">
+                <div class="map-item"><strong>Modul 1: Prinsip Dasar K3</strong><p>Pengertian, tujuan, landasan hukum, regulasi, dan kuis formatif.</p></div>
+                <div class="map-item" style="border-color:var(--orange)"><strong>Modul 2: Bahaya &amp; Risiko</strong><p>Hazard vs risk, temukan bahaya, penilaian risiko, pengendalian, near-miss.</p></div>
+                <div class="map-item" style="border-color:var(--green)"><strong>Modul 3: Memilih APD</strong><p>Mengenal 5 APD wajib dan latihan memilih APD.</p></div>
+                <div class="map-item" style="border-color:var(--navy)"><strong>Modul 4: Prosedur Aman</strong><p>5 langkah kerja aman dan kuis skenario forklift.</p></div>
+            </div>
+            <p class="fine" style="margin:0">Kuis Akhir terbuka setelah progres mencapai 4 dari 4 modul.</p>
+        </div>
+    </dialog>
+</section>
+
+<!-- ============ SCENE 03: MODUL 1 ============ -->
+<section id="scene-03" class="scene">
+    <header class="app-bar"><div class="brand">K3 BONGKAR MUAT</div><span class="crumb">Modul 1 &middot; Prinsip Dasar K3</span><button class="btn btn-ghost" type="button" data-go="scene-02">Beranda</button></header>
+    <div class="page">
+        <div class="tabs" role="tablist" aria-label="Materi Modul 1">
+            <button class="tab" role="tab" data-tab="m1-pengertian" data-mark="1:pengertian" aria-selected="true">Pengertian</button>
+            <button class="tab" role="tab" data-tab="m1-tujuan" data-mark="1:tujuan" aria-selected="false">Tujuan</button>
+            <button class="tab" role="tab" data-tab="m1-landasan" data-mark="1:landasan" aria-selected="false">Landasan Hukum</button>
+        </div>
+
+        <div id="m1-pengertian" role="tabpanel">
+            <h1>Apa itu K3?</h1>
+            <div class="panel accent" style="margin:16px 0">
+                <p style="margin:0"><strong>PP No. 50 Tahun 2012:</strong> segala kegiatan untuk menjamin dan melindungi keselamatan dan kesehatan tenaga kerja melalui upaya pencegahan kecelakaan kerja dan penyakit akibat kerja.</p>
+            </div>
+            <h3>Pandangan lain</h3>
+            <div class="term-grid">
+                <div class="term"><strong>ILO 2008</strong><span>K3 adalah ilmu untuk antisipasi, rekognisi, evaluasi, dan pengendalian bahaya di tempat kerja.</span></div>
+                <div class="term"><strong>OHSAS 18001</strong><span>Melindungi kesehatan tenaga kerja dari penyakit akibat kerja.</span></div>
+            </div>
+            <div class="actions"><button class="btn btn-primary" type="button" data-tab-go="m1-tujuan">Lanjut</button></div>
+        </div>
+
+        <div id="m1-tujuan" role="tabpanel" hidden>
+            <h1>Tujuan K3</h1>
+            <div class="panel accent" style="margin-top:16px">
+                <p style="margin:0"><strong>Menurut UU No. 1 Tahun 1970:</strong></p>
+                <ul>
+                    <li>Melindungi dan menjamin keselamatan setiap tenaga kerja dan orang lain di tempat kerja.</li>
+                    <li>Menjamin setiap sumber produksi dapat digunakan secara aman dan efisien.</li>
+                    <li>Meningkatkan kesejahteraan dan produktivitas nasional.</li>
+                </ul>
+            </div>
+            <div class="actions"><button class="btn btn-primary" type="button" data-tab-go="m1-landasan">Lanjut</button></div>
+        </div>
+
+        <div id="m1-landasan" role="tabpanel" hidden>
+            <div class="cols">
+                <div>
+                    <h2>Landasan Hukum</h2>
+                    <details class="acc"><summary>1. UUD 1945 Pasal 27 ayat (2)</summary><p>Setiap warga negara berhak atas pekerjaan dan penghidupan yang layak bagi kemanusiaan.</p></details>
+                    <details class="acc"><summary>2. UUD 1945 Pasal 28D ayat (2)</summary><p>Setiap orang berhak untuk bekerja serta mendapat imbalan dan perlakuan yang adil dan layak dalam hubungan kerja.</p></details>
+                    <details class="acc"><summary>3. UU No. 1 Tahun 1970</summary><p>Menjadi dasar utama penyelenggaraan K3 untuk mencegah kecelakaan kerja dan melindungi tenaga kerja.</p></details>
+                    <details class="acc"><summary>4. UU No. 13 Tahun 2003</summary><p>Mengatur hak pekerja untuk memperoleh perlindungan atas keselamatan dan kesehatan kerja.</p></details>
+                    <details class="acc"><summary>5. UU No. 6 Tahun 2023</summary><p>Memuat ketentuan ketenagakerjaan, termasuk perlindungan tenaga kerja.</p></details>
+                </div>
+                <div>
+                    <h2>Regulasi Teknis</h2>
+                    <p class="fine">Klik kartu untuk melihat detail.</p>
+                    <div class="flip-grid">
+                        <button class="flip" type="button" aria-pressed="false"><span class="flip-in"><span class="flip-face flip-front"><strong>PP 50/2012</strong><small>SMK3</small></span><span class="flip-face flip-back">Sistem Manajemen K3: mengatur penerapan sistem manajemen keselamatan dan kesehatan kerja.</span></span></button>
+                        <button class="flip" type="button" aria-pressed="false"><span class="flip-in"><span class="flip-face flip-front"><strong>Permenaker 5/2018</strong><small>Lingkungan Kerja</small></span><span class="flip-face flip-back">Mengatur persyaratan K3 pada lingkungan kerja (fisika, kimia, biologi, dan lainnya).</span></span></button>
+                        <button class="flip" type="button" aria-pressed="false"><span class="flip-in"><span class="flip-face flip-front"><strong>Permenaker 9/2016</strong><small>Ketinggian</small></span><span class="flip-face flip-back">Mengatur keselamatan pekerja pada posisi yang berisiko jatuh dari ketinggian.</span></span></button>
+                        <button class="flip" type="button" aria-pressed="false"><span class="flip-in"><span class="flip-face flip-front"><strong>Permenaker 8/2020</strong><small>Pesawat Angkat &amp; Angkut</small></span><span class="flip-face flip-back">Mengatur persyaratan alat angkat (crane, forklift) agar risiko kecelakaan diminimalkan.</span></span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="actions"><button class="btn btn-primary" type="button" data-go="scene-05">Ke Kuis Formatif</button></div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ SCENE 05: KUIS FORMATIF M1 ============ -->
+<section id="scene-05" class="scene">
+    <header class="app-bar"><div class="brand">K3 BONGKAR MUAT</div><span class="crumb">Modul 1 &middot; Kuis Formatif</span><button class="btn btn-ghost" type="button" data-go="scene-02">Beranda</button></header>
+    <div class="page narrow"><div id="quiz-m1"></div></div>
+</section>
+
+<!-- ============ SCENE 06: HAZARD VS RISK ============ -->
+<section id="scene-06" class="scene">
+    <header class="app-bar"><div class="brand">K3 BONGKAR MUAT</div><span class="crumb">Modul 2 &middot; Hazard vs Risk</span><button class="btn btn-ghost" type="button" data-go="scene-02">Beranda</button></header>
+    <div class="page">
+        <div class="eyebrow">Langkah 1 dari 6 &middot; Modul 2: Bahaya &amp; Risiko</div>
+        
+        <div class="m2-card">
+            <div class="m2-grid">
+                <!-- Kolom Kiri: Penjelasan & Interaksi Pill Mirip Mockup -->
+                <div class="m2-content-col">
+                    <h1 class="m2-header-title">Perbedaan Hazard dan Risk</h1>
+                    <p class="m2-lead">Dua istilah K3 yang saling berhubungan erat namun memiliki makna yang mendasar dan berbeda dalam manajemen keselamatan kerja.</p>
+                    <div class="m2-source">Sumber: PP No. 50 Tahun 2012 &amp; OHSAS 18001 / ISO 45001</div>
+                    
+                    <div class="hvr-interactive">
+                        <div class="hvr-callout" id="hvr-callout-box" aria-live="polite">
+                            <strong id="hvr-callout-title">&#9888;&#65039; HAZARD (Bahaya)</strong>
+                            <p id="hvr-callout-desc">Segala sumber, situasi, atau aktivitas yang berpotensi menimbulkan cedera, penyakit akibat kerja, kerusakan peralatan, atau gangguan lingkungan.</p>
+                            <div class="hvr-callout-example" id="hvr-callout-example">
+                                <strong>Contoh di Gudang:</strong> Genangan oli di lantai, tumpukan palet miring, atau forklift melintas tanpa klakson.
+                            </div>
+                        </div>
+                        
+                        <div class="hvr-pills" role="group" aria-label="Pilih topik perbedaan">
+                            <button type="button" class="hvr-pill active" data-hvr="hazard">Hazard (Bahaya)</button>
+                            <button type="button" class="hvr-pill" data-hvr="risk">Risk (Risiko)</button>
+                            <button type="button" class="hvr-pill" data-hvr="formula">Rumus Risiko</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kolom Kanan: Tempat Video Interaktif (Bisa Diisi Sendiri) -->
+                <div class="video-box-panel">
+                    <div class="video-wrapper">
+                        <!-- Tag video siap pakai: isi atribut src dengan file atau URL video Anda -->
+                        <video id="video-m2" class="video-player" controls preload="metadata">
+                            <!-- Contoh: <source src="assets/video-hazard-risk.mp4" type="video/mp4"> -->
+                            Browser Anda tidak mendukung pemutaran video HTML5.
+                        </video>
+                        <div class="video-placeholder" id="video-placeholder-m2">
+                            <div class="video-play-btn" aria-hidden="true">&#9654;</div>
+                            <div class="video-placeholder-text">
+                                <strong>Video Pembelajaran K3</strong>
+                                <p>Simulasi Interaktif: Perbedaan Hazard &amp; Risk</p>
+                            </div>
+                            <span class="video-placeholder-hint">&lt;video&gt; siap diisi file video Anda</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tombol Navigasi Bawah: Menu di Kiri, Lanjut di Kanan -->
+        <div class="nav-split">
+            <button class="btn btn-secondary" type="button" data-go="scene-02">&lt; Menu</button>
+            <button class="btn btn-primary" type="button" data-go="scene-07" data-mark="2:hvr">Lanjut &gt;</button>
+        </div>
+    </div>
+</section>
+
+<!-- ============ SCENE 07: TAHAPAN IDENTIFIKASI ============ -->
+<section id="scene-07" class="scene">
+    <header class="app-bar"><div class="brand">K3 BONGKAR MUAT</div><span class="crumb">Modul 2 &middot; Identifikasi Bahaya</span><button class="btn btn-ghost" type="button" data-go="scene-02">Beranda</button></header>
+    <div class="page">
+        <div class="eyebrow">Langkah 2 dari 6</div>
+        <h1>6 Tahap Identifikasi Bahaya</h1>
+        <p class="lead">Pilih nomor untuk melihat tiap tahap.</p>
+        <div class="steps" id="steps"></div>
+        <div class="panel accent" aria-live="polite"><h3 id="step-title">Pilih tahap di atas</h3><p id="step-desc" style="margin:0">Detail tiap tahap identifikasi bahaya akan tampil di sini.</p></div>
+
+        <div class="section">
+            <h2>Metode Identifikasi</h2>
+            <div class="term-grid">
+                <div class="term"><strong>Observasi</strong><span>Mengamati pekerjaan dan kondisi tempat kerja.</span></div>
+                <div class="term"><strong>Wawancara</strong><span>Menanyakan pengalaman pekerja terhadap kondisi berbahaya.</span></div>
+                <div class="term"><strong>Inspeksi</strong><span>Mengecek kondisi fasilitas dan peralatan.</span></div>
+                <div class="term"><strong>Riwayat Kecelakaan</strong><span>Mempelajari kecelakaan atau near-miss yang pernah terjadi.</span></div>
+                <div class="term"><strong>JSA</strong><span>Memecah pekerjaan menjadi langkah-langkah untuk mengidentifikasi bahayanya.</span></div>
+            </div>
+        </div>
+        <div class="actions"><button class="btn btn-primary" type="button" data-go="scene-08" id="btn-to-find">Ke Latihan</button></div>
+    </div>
+</section>
+
+<!-- ============ SCENE 08: TEMUKAN BAHAYA ============ -->
+<section id="scene-08" class="scene">
+    <header class="app-bar"><div class="brand">K3 BONGKAR MUAT</div><span class="crumb">Modul 2 &middot; Temukan Bahaya</span><button class="btn btn-ghost" type="button" data-go="scene-02">Beranda</button></header>
+    <div class="page narrow">
+        <div class="eyebrow">Langkah 3 dari 6</div>
+        <h1>Temukan 5 Bahaya di Area Kerja</h1>
+        <p class="lead">Klik titik yang menurut Anda berbahaya. Ditemukan: <span class="counter" id="hazard-count">0</span>/5</p>
+        <div class="stage">
+            <svg viewBox="0 0 800 400" role="img" aria-label="Ilustrasi area bongkar muat dengan lima potensi bahaya">
+                <rect width="800" height="400" fill="#e9eef5"/>
+                <rect y="288" width="800" height="112" fill="#c5cedb"/>
+                <rect y="285" width="800" height="5" fill="#aab5c5"/>
+                <g fill="#f5c542"><rect x="300" y="352" width="260" height="5"/><rect x="300" y="384" width="260" height="5"/></g>
+                <!-- rak + tumpukan miring -->
+                <g>
+                    <rect x="40" y="92" width="8" height="196" fill="#5f6f85"/><rect x="232" y="92" width="8" height="196" fill="#5f6f85"/>
+                    <rect x="40" y="130" width="200" height="8" fill="#8190a5"/><rect x="40" y="200" width="200" height="8" fill="#8190a5"/><rect x="40" y="270" width="200" height="8" fill="#8190a5"/>
+                    <g fill="#d2a15f" stroke="#9a6f33" stroke-width="1.5"><rect x="56" y="150" width="50" height="50"/><rect x="112" y="160" width="60" height="40"/><rect x="180" y="150" width="44" height="50"/><rect x="56" y="222" width="70" height="48"/><rect x="134" y="228" width="60" height="42"/></g>
+                    <g transform="rotate(-14 140 92)" fill="#d2a15f" stroke="#9a6f33" stroke-width="1.5"><rect x="96" y="92" width="88" height="38"/><rect x="108" y="58" width="64" height="34"/></g>
+                </g>
+                <!-- oli -->
+                <ellipse cx="270" cy="338" rx="50" ry="12" fill="#1f2630" opacity=".88"/><ellipse cx="256" cy="335" rx="16" ry="3" fill="#7a7fb0" opacity=".6"/>
+                <!-- forklift -->
+                <g>
+                    <rect x="384" y="292" width="110" height="44" rx="4" fill="#f1c40f"/><rect x="384" y="292" width="26" height="44" fill="#2f3a4d"/>
+                    <rect x="414" y="248" width="52" height="44" fill="none" stroke="#333" stroke-width="4"/><circle cx="440" cy="268" r="8" fill="#f0c9a0"/>
+                    <rect x="494" y="228" width="9" height="110" fill="#3a4352"/><rect x="494" y="330" width="46" height="6" fill="#5b6575"/>
+                    <circle cx="410" cy="340" r="16" fill="#222"/><circle cx="474" cy="340" r="16" fill="#222"/>
+                </g>
+                <!-- pekerja di jalur forklift -->
+                <g><rect x="570" y="296" width="24" height="42" rx="4" fill="#3b7ea1"/><circle cx="582" cy="284" r="10" fill="#f0c9a0"/><path d="M571 282a11 11 0 0 1 22 0z" fill="#f5b82e"/><rect x="573" y="336" width="8" height="22" fill="#34495e"/><rect x="584" y="336" width="8" height="22" fill="#34495e"/></g>
+                <!-- kabel -->
+                <path d="M610 360 C640 338 680 380 735 354" fill="none" stroke="#222" stroke-width="5" stroke-linecap="round"/><rect x="728" y="346" width="14" height="14" rx="2" fill="#555"/>
+                <!-- pintu darurat terhalang -->
+                <g><rect x="700" y="112" width="76" height="176" fill="#dfe6ee" stroke="#2e8b57" stroke-width="3"/><rect x="712" y="88" width="52" height="18" rx="3" fill="#2e8b57"/><text x="738" y="101" font-family="Roboto,sans-serif" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">EXIT</text>
+                <g fill="#d2a15f" stroke="#9a6f33" stroke-width="1.5"><rect x="692" y="236" width="56" height="52"/><rect x="738" y="248" width="46" height="40"/><rect x="706" y="196" width="40" height="40"/></g></g>
+            </svg>
+            <button class="hs" style="--x:19%;--y:18%" data-h="0" aria-label="Titik bahaya: tumpukan di rak"></button>
+            <button class="hs" style="--x:34%;--y:84%" data-h="1" aria-label="Titik bahaya: genangan di lantai"></button>
+            <button class="hs" style="--x:73%;--y:78%" data-h="2" aria-label="Titik bahaya: pekerja dekat forklift"></button>
+            <button class="hs" style="--x:84%;--y:90%" data-h="3" aria-label="Titik bahaya: kabel di lantai"></button>
+            <button class="hs" style="--x:92%;--y:50%" data-h="4" aria-label="Titik bahaya: pintu darurat"></button>
+        </div>
+        <ul class="found-list" id="hazard-found" aria-live="polite"></ul>
+        <div class="actions"><button class="btn btn-primary" type="button" data-go="scene-09" id="btn-after-find" hidden>Lanjut</button></div>
+    </div>
+</section>
+
+<!-- ============ SCENE 09: PENILAIAN RISIKO ============ -->
+<section id="scene-09" class="scene">
+    <header class="app-bar"><div class="brand">K3 BONGKAR MUAT</div><span class="crumb">Modul 2 &middot; Penilaian Risiko</span><button class="btn btn-ghost" type="button" data-go="scene-02">Beranda</button></header>
+    <div class="page narrow">
+        <div class="eyebrow">Langkah 4 dari 6</div>
+        <h1>Penilaian Risiko Sederhana</h1>
+        <p class="lead">Pilih satu kartu, lalu pilih tingkat risikonya.</p>
+        <div class="pick-row" id="risk-picks">
+            <button class="pick" type="button" data-risk="rendah">Barang kecil di jalur</button>
+            <button class="pick" type="button" data-risk="sedang">Tumpahan oli sedikit</button>
+            <button class="pick" type="button" data-risk="tinggi">Pekerja di jalur forklift</button>
+        </div>
+        <div class="risk-cols" id="risk-cols">
+            <button class="risk-col lvl-rendah" type="button" data-level="rendah"><strong>RENDAH</strong></button>
+            <button class="risk-col lvl-sedang" type="button" data-level="sedang"><strong>SEDANG</strong></button>
+            <button class="risk-col lvl-tinggi" type="button" data-level="tinggi"><strong>TINGGI</strong></button>
+        </div>
+        <div class="msg" id="risk-msg" aria-live="polite"></div>
+
+        <div class="section">
+            <h2>Prinsip STOP &ndash; THINK &ndash; ACT</h2>
+            <div class="sta">
+                <div class="s1"><strong>STOP</strong>Henti saat tidak aman</div>
+                <div class="s2"><strong>THINK</strong>Nilai bahaya &amp; dampak</div>
+                <div class="s3"><strong>ACT</strong>Lapor, amankan, perbaiki</div>
+            </div>
+        </div>
+        <div class="actions"><button class="btn btn-primary" type="button" data-go="scene-10" id="btn-after-risk" hidden>Lanjut</button></div>
+    </div>
+</section>
+
+<!-- ============ SCENE 10: PENGENDALIAN ============ -->
+<section id="scene-10" class="scene">
+    <header class="app-bar"><div class="brand">K3 BONGKAR MUAT</div><span class="crumb">Modul 2 &middot; Pengendalian Risiko</span><button class="btn btn-ghost" type="button" data-go="scene-02">Beranda</button></header>
+    <div class="page narrow">
+        <div class="eyebrow">Langkah 5 dari 6</div>
+        <h1>Pengendalian Risiko</h1>
+        <p class="lead">Buka kelima topik untuk melanjutkan.</p>
+        <div class="tabs" role="tablist" aria-label="Topik pengendalian" data-complete="2:kendali">
+            <button class="tab" role="tab" data-tab="m2-1" aria-selected="true">Manual Handling</button>
+            <button class="tab" role="tab" data-tab="m2-2" aria-selected="false">Lalu Lintas &amp; Alat</button>
+            <button class="tab" role="tab" data-tab="m2-3" aria-selected="false">Material &amp; Tumpukan</button>
+            <button class="tab" role="tab" data-tab="m2-4" aria-selected="false">Terjepit</button>
+            <button class="tab" role="tab" data-tab="m2-5" aria-selected="false">Terjatuh</button>
+        </div>
+        <div id="m2-1" role="tabpanel" class="panel accent"><h2>Manual Handling</h2><ul><li>Gunakan alat bantu: forklift atau hand pallet.</li><li>Minta bantuan untuk barang berat.</li><li>Tekuk lutut, punggung tegak, angkat dengan kaki.</li></ul></div>
+        <div id="m2-2" role="tabpanel" class="panel accent" hidden><h2>Lalu Lintas &amp; Alat Berat</h2><ul><li>Pisahkan jalur pekerja dan alat.</li><li>Lakukan kontak visual dengan operator.</li></ul></div>
+        <div id="m2-3" role="tabpanel" class="panel accent" hidden><h2>Material &amp; Tumpukan</h2><ul><li>Susun rapi, beban berat di bawah.</li><li>Jaga jarak aman dari tumpukan.</li></ul></div>
+        <div id="m2-4" role="tabpanel" class="panel accent" hidden><h2>Terjepit</h2><ul><li>Hindari titik jepit (pinch point).</li><li>Gunakan sarung tangan.</li></ul></div>
+        <div id="m2-5" role="tabpanel" class="panel accent" hidden><h2>Terjatuh</h2><ul><li>Bersihkan lantai dari genangan oli/air.</li><li>Jangan melompat dari bak truk.</li></ul></div>
+        <div class="actions"><button class="btn btn-primary" type="button" data-go="scene-11">Lanjut</button></div>
+    </div>
+</section>
+
+<!-- ============ SCENE 11: NEAR-MISS ============ -->
+<section id="scene-11" class="scene">
+    <header class="app-bar"><div class="brand">K3 BONGKAR MUAT</div><span class="crumb">Modul 2 &middot; Pelaporan &amp; Darurat</span><button class="btn btn-ghost" type="button" data-go="scene-02">Beranda</button></header>
+    <div class="page narrow">
+        <div class="eyebrow">Langkah 6 dari 6</div>
+        <h1>Pelaporan Near-Miss (Hampir Celaka)</h1>
+        <p class="lead">Kejadian hampir celaka adalah peringatan gratis. Laporkan dengan alur berikut.</p>
+        <ol class="flow"><li>Temukan</li><li>Laporkan</li><li>Identifikasi</li><li>Perbaikan</li><li>Pantau</li></ol>
+        <div class="panel accent-red section">
+            <h2 style="color:var(--red)">Tindakan Darurat (P3K)</h2>
+            <ul>
+                <li>Berhenti bekerja dan amankan area (misalnya hentikan forklift).</li>
+                <li>Periksa kondisi korban.</li>
+                <li>Beri pertolongan sesuai kondisi (luka ringan) dengan kotak P3K.</li>
+                <li>Hubungi petugas medis atau penanggung jawab K3.</li>
+                <li>Jangan pindahkan korban cedera serius (jatuh/tertimpa) sembarangan.</li>
+                <li>Laporkan kejadian.</li>
+            </ul>
+        </div>
+        <div class="actions center"><button class="btn btn-success" type="button" id="btn-finish-m2">Selesaikan Modul 2</button></div>
+    </div>
+</section>
+
+<!-- ============ SCENE 12: JENIS APD ============ -->
+<section id="scene-12" class="scene">
+    <header class="app-bar"><div class="brand">K3 BONGKAR MUAT</div><span class="crumb">Modul 3 &middot; Jenis APD</span><button class="btn btn-ghost" type="button" data-go="scene-02">Beranda</button></header>
+    <div class="page">
+        <h1>Peralatan Pelindung Diri (APD) Wajib</h1>
+        <p class="lead">Klik titik pada gambar pekerja, atau pilih dari daftar, untuk melihat fungsi tiap APD.</p>
+        <div class="cols">
+            <div>
+                <div class="stage apd-stage">
+                    <svg viewBox="0 0 220 400" role="img" aria-label="Ilustrasi pekerja dengan lima APD wajib">
+                        <rect width="220" height="400" fill="#e9eef5"/>
+                        <rect y="376" width="220" height="24" fill="#c5cedb"/>
+                        <rect x="80" y="220" width="28" height="130" fill="#34495e"/><rect x="112" y="220" width="28" height="130" fill="#34495e"/>
+                        <rect x="72" y="346" width="40" height="28" rx="6" fill="#2b2b2b"/><rect x="108" y="346" width="40" height="28" rx="6" fill="#2b2b2b"/>
+                        <rect x="48" y="104" width="26" height="100" rx="10" fill="#3b7ea1"/><rect x="146" y="104" width="26" height="100" rx="10" fill="#3b7ea1"/>
+                        <circle cx="60" cy="214" r="14" fill="#e67e22"/><circle cx="160" cy="214" r="14" fill="#e67e22"/>
+                        <rect x="72" y="100" width="76" height="124" rx="10" fill="#3b7ea1"/>
+                        <path d="M84 100h14l12 30 12-30h14v124H84z" fill="#c6f135"/><rect x="84" y="158" width="52" height="7" fill="#fff"/><rect x="84" y="186" width="52" height="7" fill="#fff"/>
+                        <circle cx="110" cy="70" r="27" fill="#f0c9a0"/>
+                        <rect x="92" y="68" width="36" height="9" rx="4" fill="#8cc8f0" stroke="#3a5a78" stroke-width="1.5"/>
+                        <rect x="94" y="80" width="32" height="14" rx="6" fill="#f2f5f9" stroke="#b7c2d1"/>
+                        <path d="M76 64a34 34 0 0 1 68 0z" fill="#f5b82e"/><rect x="70" y="62" width="80" height="8" rx="3" fill="#e0a010"/>
+                        <path d="M84 70v22M136 70v22" stroke="#d8dde5" stroke-width="2"/>
+                    </svg>
+                    <button class="hs" style="--x:50%;--y:14%" data-apd="helm" aria-label="Helm safety"></button>
+                    <button class="hs" style="--x:50%;--y:20%" data-apd="kacamata" aria-label="Masker dan kacamata"></button>
+                    <button class="hs" style="--x:50%;--y:40%" data-apd="rompi" aria-label="Rompi high-vis"></button>
+                    <button class="hs" style="--x:27%;--y:53%" data-apd="sarung" aria-label="Sarung tangan"></button>
+                    <button class="hs" style="--x:43%;--y:90%" data-apd="sepatu" aria-label="Sepatu safety"></button>
+                </div>
+            </div>
+            <div>
+                <div class="panel accent" id="apd-detail" aria-live="polite"><p class="fine" style="margin:0">Pilih salah satu APD untuk melihat detailnya.</p></div>
+                <div class="apd-list" id="apd-list">
+                    <button type="button" data-apd="helm">Helm Safety</button>
+                    <button type="button" data-apd="kacamata">Masker &amp; Kacamata</button>
+                    <button type="button" data-apd="rompi">Rompi High-Vis</button>
+                    <button type="button" data-apd="sarung">Sarung Tangan Kerja</button>
+                    <button type="button" data-apd="sepatu">Sepatu Safety</button>
+                </div>
+            </div>
+        </div>
+        <div class="actions"><button class="btn btn-primary" type="button" data-go="scene-13">Latihan APD</button></div>
+    </div>
+</section>
+
+<!-- ============ SCENE 13: LATIHAN APD ============ -->
+<section id="scene-13" class="scene">
+    <header class="app-bar"><div class="brand">K3 BONGKAR MUAT</div><span class="crumb">Modul 3 &middot; Latihan Pilih APD</span><button class="btn btn-ghost" type="button" data-go="scene-02">Beranda</button></header>
+    <div class="page narrow">
+        <h1>Skenario</h1>
+        <div class="scenario-box" style="margin:16px 0">Kamu akan membongkar muatan dari truk fuso di area gudang yang dilalui forklift. <strong>Pilih semua APD wajib.</strong></div>
+        <div class="apd-grid" id="apd-grid">
+            <button class="apd-card" type="button" data-correct="1" aria-pressed="false">Helm Safety</button>
+            <button class="apd-card" type="button" data-correct="1" aria-pressed="false">Sepatu Safety</button>
+            <button class="apd-card" type="button" data-correct="1" aria-pressed="false">Rompi High-Vis</button>
+            <button class="apd-card" type="button" data-correct="1" aria-pressed="false">Sarung Tangan</button>
+            <button class="apd-card" type="button" data-correct="1" aria-pressed="false">Masker &amp; Kacamata</button>
+            <button class="apd-card" type="button" data-correct="0" aria-pressed="false">Sandal Jepit</button>
+            <button class="apd-card" type="button" data-correct="0" aria-pressed="false">Topi Kain</button>
+            <button class="apd-card" type="button" data-correct="0" aria-pressed="false">Jaket Tebal</button>
+        </div>
+        <p style="margin-top:16px"><strong>Dipilih: <span id="apd-selected-count">0</span> APD</strong></p>
+        <div class="msg" id="apd-feedback" aria-live="polite"></div>
+        <div class="actions">
+            <button class="btn btn-secondary" type="button" id="btn-check-apd">Periksa Jawaban</button>
+            <button class="btn btn-success" type="button" id="btn-finish-m3" hidden>Selesai Modul 3</button>
+        </div>
+    </div>
+</section>
+
+<!-- ============ SCENE 14: PROSEDUR KERJA AMAN ============ -->
+<section id="scene-14" class="scene">
+    <header class="app-bar"><div class="brand">K3 BONGKAR MUAT</div><span class="crumb">Modul 4 &middot; Prosedur Kerja Aman</span><button class="btn btn-ghost" type="button" data-go="scene-02">Beranda</button></header>
+    <div class="page">
+        <h1>5 Langkah Prosedur Kerja Aman</h1>
+        <p class="lead">Buka kelima langkah untuk melanjutkan ke kuis skenario.</p>
+        <div class="proc">
+            <div class="proc-view" aria-live="polite">
+                <div class="num" id="proc-num">1</div>
+                <h2 id="proc-title"></h2>
+                <p id="proc-desc"></p>
+                <ul id="proc-list"></ul>
+            </div>
+            <div class="proc-steps" id="proc-steps"></div>
+        </div>
+        <div class="actions"><button class="btn btn-primary" type="button" data-go="scene-15" id="btn-to-scenario" disabled>Kuis Skenario</button></div>
+    </div>
+</section>
+
+<!-- ============ SCENE 15: KUIS SKENARIO ============ -->
+<section id="scene-15" class="scene">
+    <header class="app-bar"><div class="brand">K3 BONGKAR MUAT</div><span class="crumb">Modul 4 &middot; Kuis Skenario</span><button class="btn btn-ghost" type="button" data-go="scene-02">Beranda</button></header>
+    <div class="page narrow">
+        <div class="panel accent-orange" style="padding:28px">
+            <div class="eyebrow" style="color:var(--orange-d)">Perhatian</div>
+            <p style="font-size:19px;margin:10px 0 18px">"Aku harus ke area truk, tapi forklift sedang bermanuver di dekatku&hellip;"</p>
+            <h2>Apa yang kamu lakukan?</h2>
+            <button class="choice" type="button" data-scenario="A">A. Langsung melintas dengan cepat</button>
+            <button class="choice" type="button" data-scenario="B">B. Berhenti di tempat aman, kontak mata dengan operator, tunggu tanda</button>
+            <button class="choice" type="button" data-scenario="C">C. Memanggil rekan agar menahan forklift</button>
+        </div>
+    </div>
+</section>
+
+<!-- ============ SCENE 16: HASIL SKENARIO ============ -->
+<section id="scene-16" class="scene">
+    <header class="app-bar"><div class="brand">K3 BONGKAR MUAT</div><span class="crumb">Modul 4 &middot; Hasil Skenario</span><button class="btn btn-ghost" type="button" data-go="scene-02">Beranda</button></header>
+    <div class="page narrow">
+        <div class="result-card" id="scenario-card">
+            <h1 id="scenario-title"></h1>
+            <p id="scenario-desc" style="margin:14px 0"></p>
+            <h3 id="scenario-score" style="margin-bottom:24px"></h3>
+            <div class="actions center" id="scenario-actions"></div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ SCENE 17: PENUTUP ============ -->
+<section id="scene-17" class="scene">
+    <header class="app-bar"><div class="brand">K3 BONGKAR MUAT</div><span class="crumb">Hasil &amp; Penutup</span></header>
+    <div class="page narrow" style="text-align:center">
+        <h1 style="font-size:34px">Kerja Bagus!</h1>
+        <p style="font-size:18px;color:#dbe5f5">Kamu telah menyelesaikan seluruh modul K3 Bongkar Muat.</p>
+        <div class="cert" style="text-align:left">
+            <div>
+                <h3>Rekapitulasi</h3>
+                <ul><li>Modul 1: Prinsip Dasar K3</li><li>Modul 2: Identifikasi &amp; Pengendalian Bahaya</li><li>Modul 3: Memilih APD</li><li>Modul 4: Prosedur Kerja Aman</li><li>Kuis Akhir: lulus (<span id="final-score">-</span>)</li></ul>
+            </div>
+            <div class="cert-badge">
+                <svg viewBox="0 0 120 130" aria-hidden="true"><path d="M60 6 108 24v38c0 30-20 52-48 62C32 114 12 92 12 62V24z" fill="#f58b22" stroke="#ffd45e" stroke-width="6"/><path d="m38 64 16 16 30-34" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <strong>PEKERJA SIAGA K3</strong>
+            </div>
+        </div>
+        <div class="actions center">
+            <button class="btn btn-ghost" type="button" data-go="scene-02">Kembali ke Menu</button>
+            <button class="btn btn-primary" type="button" id="btn-reset">Reset &amp; Mulai Ulang</button>
+        </div>
+    </div>
+</section>
+
+<!-- ============ SCENE 18: KUIS AKHIR ============ -->
+<section id="scene-18" class="scene">
+    <header class="app-bar"><div class="brand">K3 BONGKAR MUAT</div><span class="crumb">Kuis Akhir</span><button class="btn btn-ghost" type="button" data-go="scene-02">Beranda</button></header>
+    <div class="page narrow"><div id="quiz-final"></div></div>
+</section>
+
+
+
+<script src="js/app.js"></script>
+</body>
+</html>
