@@ -85,7 +85,7 @@ function renderMenu() {
 
 /* ---------- Navigasi File ---------- */
 const SCENE_FILE_MAP = {
-    'scene-01': 'start.html',
+    'scene-01': 'index.html',
     'scene-02': 'beranda.html',
     'scene-17': 'beranda.html#scene-17',
     'scene-17b': 'beranda.html#scene-17b',
