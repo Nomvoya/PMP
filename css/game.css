@@ -1,0 +1,151 @@
+/* =====================================================================
+   BAGIAN 2 — GAYA GAME (dari prototype_k3_v4.html, semua selektor
+   otomatis diberi awalan #scene-game agar tidak bentrok dengan situs)
+   ===================================================================== */
+#scene-game { color-scheme: dark; font-family: "Trebuchet MS", sans-serif; }
+#scene-game #gameContainer {
+        position: relative; width: min(100vw, 860px, calc((100svh - 96px) * 1.7778));
+        display: flex; flex-direction: column;
+        background: #121c20; border: 2px solid #4a6367;
+        box-shadow: 0 18px 55px rgba(0,0,0,0.8); border-radius: 8px; overflow: hidden;
+    }
+#scene-game #canvasWrapper { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #18262b; }
+#scene-game #gameCanvas { display: block; width: 100%; height: 100%; touch-action: none; }
+#scene-game .hidden { display: none !important; }
+#scene-game #topUI {
+        position: absolute; inset: 8px 10px auto; z-index: 5;
+        display: flex; align-items: center; justify-content: space-between; gap: 6px; pointer-events: none;
+    }
+#scene-game .ui-group { display: flex; align-items: center; gap: 6px; pointer-events: auto; }
+#scene-game .ui-card, #scene-game .slot, #scene-game .ui-button {
+        min-height: 34px; border: 1px solid #5a7378; border-radius: 6px;
+        background: rgba(15, 26, 30, 0.9); color: #f3f5ee; font: 700 12px "Trebuchet MS", sans-serif;
+        display: inline-flex; align-items: center; gap: 6px;
+    }
+#scene-game .ui-card { padding: 0 9px; }
+#scene-game .slot, #scene-game .ui-button { justify-content: center; cursor: pointer; pointer-events: auto; user-select: none; padding: 0 10px; }
+#scene-game .slot { width: 34px; font-size: 17px; padding: 0; }
+#scene-game .slot.active { color: #111a17; background: #e9bd47; border-color: #ffdf77; box-shadow: 0 0 10px #e9bd47; }
+#scene-game #hpBarContainer { width: 70px; height: 10px; background: #331111; border-radius: 4px; overflow: hidden; border: 1px solid #773333; }
+#scene-game #hpBar { width: 100%; height: 100%; background: #e74c3c; transition: width 0.2s; }
+#scene-game #scoreDisplay { color: #2ecc71; font-weight: 800; }
+#scene-game #missionBar {
+        position: absolute; left: 10px; top: 48px; z-index: 5; display: flex; flex-wrap: wrap; gap: 5px;
+        pointer-events: none; max-width: calc(100% - 20px);
+    }
+#scene-game .chip {
+        padding: 3px 8px; border: 1px solid #4b6469; border-radius: 12px; background: rgba(15,26,30,0.85);
+        font: 700 11px "Trebuchet MS", sans-serif; color: #dfe8e3; white-space: nowrap;
+    }
+#scene-game .chip.done { border-color: #2ecc71; color: #2ecc71; }
+#scene-game #apdRow span { opacity: 0.25; filter: grayscale(1); }
+#scene-game #apdRow span.on { opacity: 1; filter: none; }
+#scene-game #zoneChip { color: #ffdf77; }
+#scene-game #zoneChip.danger { color: #ff8d7a; border-color: #e74c3c; }
+#scene-game #zoneChip.safe { color: #2ecc71; border-color: #2ecc71; }
+#scene-game #staBanner {
+        position: absolute; z-index: 6; top: 78px; left: 50%; transform: translateX(-50%);
+        display: flex; gap: 6px; pointer-events: none;
+    }
+#scene-game #staBanner span {
+        padding: 5px 12px; border-radius: 6px; border: 2px solid #5a7378; background: rgba(15,26,30,0.9);
+        font: 800 13px "Trebuchet MS", sans-serif; color: #8fa3a6; letter-spacing: 1px;
+    }
+#scene-game #staBanner span.on { color: #111a17; }
+#scene-game #staBanner span.on.stop { background: #e74c3c; border-color: #ff9a8c; color: #fff; }
+#scene-game #staBanner span.on.think { background: #f1c40f; border-color: #ffe27a; }
+#scene-game #staBanner span.on.act { background: #2ecc71; border-color: #8ff0b6; }
+#scene-game #controlDock {
+        position: relative; width: 100%; min-height: 70px; display: flex; align-items: center;
+        justify-content: space-between; gap: 8px; padding: 8px 14px; background: #0e181b;
+        border-top: 2px solid #3d5458; z-index: 5;
+    }
+#scene-game #mobileControls { display: none; align-items: center; gap: 10px; }
+#scene-game .dpad { display: grid; grid-template: repeat(3, 28px) / repeat(3, 28px); gap: 2px; }
+#scene-game .control {
+        width: 28px; height: 28px; padding: 0; display: grid; place-items: center;
+        border: 1px solid #637b7f; border-radius: 4px; color: #f3f5ee; background: #233a40;
+        font: 700 14px "Trebuchet MS", sans-serif; touch-action: none; user-select: none;
+    }
+#scene-game .control:active { background: #345760; transform: scale(0.94); }
+#scene-game #btnJump { width: 48px; height: 48px; font-size: 11px; }
+#scene-game #dockActions { display: flex; gap: 8px; margin-left: auto; flex-wrap: wrap; justify-content: flex-end; }
+#scene-game #btnEquipAPD { background: #27ae60; border-color: #2ecc71; color: #fff; height: 40px; font-weight: bold; display: none; }
+#scene-game #btnSignal { height: 40px; background: #c0392b; border-color: #ff8d7a; color: #fff; font-weight: bold; }
+#scene-game #btnCapture { min-width: 90px; height: 40px; color: #111a17; background: #e9bd47; border-color: #ffdf77; font-weight: bold; }
+#scene-game #statusMessage {
+        position: absolute; z-index: 6; left: 50%; bottom: 10px; transform: translateX(-50%);
+        max-width: calc(100% - 24px); padding: 7px 14px; border: 1px solid #73a380; border-radius: 5px;
+        color: #fff; background: rgba(18, 35, 27, 0.95); font-size: 12px; font-weight: bold; text-align: center;
+        pointer-events: none; box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    }
+#scene-game #statusMessage:empty { display: none; }
+#scene-game #damageFlash {
+        position: absolute; inset: 0; background: rgba(231, 76, 60, 0.35);
+        pointer-events: none; z-index: 4; opacity: 0; transition: opacity 0.15s ease-out;
+    }
+#scene-game .overlay {
+        position: absolute; inset: 0; z-index: 20; overflow-y: auto; touch-action: pan-y;
+        background: rgba(8, 14, 16, 0.94); display: flex; padding: 12px;
+    }
+#scene-game #eduModal { background: rgba(8, 14, 16, 0.82); z-index: 30; }
+#scene-game .card {
+        margin: auto; width: min(100%, 640px); background: #15242a; border: 2px solid #4a6367;
+        border-radius: 10px; padding: 18px 20px; color: #e9efe9; box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    }
+#scene-game .kicker { font-size: 11px; letter-spacing: 2px; color: #e9bd47; font-weight: 800; }
+#scene-game .card h1 { margin: 6px 0 8px; font-size: 24px; color: #fff; line-height: 1.15; }
+#scene-game .card h2 { margin: 0; font-size: 19px; color: #fff; }
+#scene-game .card p { margin: 6px 0; font-size: 13px; line-height: 1.5; color: #cfdad6; }
+#scene-game .reg { background: #0f1b1f; border-left: 4px solid #e9bd47; padding: 8px 12px; border-radius: 4px; margin: 10px 0; font-size: 12px; line-height: 1.5; color: #dfe8e3; }
+#scene-game .mods { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin: 10px 0; }
+#scene-game .mod { background: #0f1b1f; border: 1px solid #36505a; border-radius: 6px; padding: 7px 9px; font-size: 11.5px; line-height: 1.4; color: #cfdad6; }
+#scene-game .mod b { color: #ffdf77; display: block; margin-bottom: 2px; }
+#scene-game .keys { font-size: 11.5px; color: #aebfba; line-height: 1.7; margin: 8px 0 12px; }
+#scene-game .keys kbd { background: #233a40; border: 1px solid #5a7378; border-radius: 4px; padding: 0 5px; font-family: inherit; color: #fff; font-weight: 700; }
+#scene-game .primary {
+        display: block; width: 100%; padding: 12px; border: 2px solid #ffdf77; border-radius: 8px;
+        background: #e9bd47; color: #111a17; font: 800 15px "Trebuchet MS", sans-serif; cursor: pointer;
+    }
+#scene-game .primary:active { transform: scale(0.98); }
+#scene-game .modal-head { display: flex; align-items: center; gap: 12px; margin-bottom: 6px; }
+#scene-game .modal-icon { font-size: 38px; }
+#scene-game .modal-sub { font-size: 12px; font-weight: 800; color: #2ecc71; }
+#scene-game .sect { margin: 9px 0; padding: 8px 12px; border-radius: 6px; background: #0f1b1f; font-size: 12.5px; line-height: 1.5; color: #dfe8e3; }
+#scene-game .sect b { display: block; font-size: 11px; letter-spacing: 1px; margin-bottom: 2px; }
+#scene-game .sect.why { border-left: 4px solid #e74c3c; }
+#scene-game .sect.why b { color: #ff8d7a; }
+#scene-game .sect.fix { border-left: 4px solid #2ecc71; }
+#scene-game .sect.fix b { color: #2ecc71; }
+#scene-game .sect.ref { border-left: 4px solid #5dade2; }
+#scene-game .sect.ref b { color: #5dade2; }
+#scene-game .badge-big { text-align: center; margin: 8px 0 4px; }
+#scene-game .badge-big .medal { font-size: 54px; line-height: 1; }
+#scene-game .badge-big .name { font-size: 20px; font-weight: 800; color: #ffdf77; }
+#scene-game .badge-big.fail .name { color: #ff8d7a; }
+#scene-game .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin: 10px 0; }
+#scene-game .stat { background: #0f1b1f; border: 1px solid #36505a; border-radius: 6px; padding: 7px 10px; font-size: 12px; }
+#scene-game .stat b { display: block; font-size: 18px; color: #fff; }
+#scene-game .hz-list { list-style: none; padding: 0; margin: 8px 0; font-size: 12px; line-height: 1.5; }
+#scene-game .hz-list li { padding: 5px 8px; margin-bottom: 4px; background: #0f1b1f; border-radius: 5px; }
+#scene-game .hz-list .ok { color: #2ecc71; font-weight: 800; }
+#scene-game .hz-list .no { color: #ff8d7a; font-weight: 800; }
+@media (max-width: 650px) {
+#scene-game #topUI { inset: 6px 8px auto; }
+#scene-game .ui-card, #scene-game .slot, #scene-game .ui-button { min-height: 28px; font-size: 10px; }
+#scene-game .ui-card { padding: 0 6px; }
+#scene-game .slot { width: 28px; font-size: 14px; }
+#scene-game .ui-button { padding: 0 7px; }
+#scene-game #hpBarContainer { width: 46px; }
+#scene-game #missionBar { top: 40px; left: 8px; gap: 3px; }
+#scene-game .chip { font-size: 9.5px; padding: 2px 6px; }
+#scene-game #staBanner { top: 66px; }
+#scene-game #staBanner span { padding: 3px 8px; font-size: 11px; }
+#scene-game #statusMessage { font-size: 10px; padding: 5px 9px; white-space: normal; bottom: 6px; }
+#scene-game #mobileControls { display: flex; }
+#scene-game #controlDock { min-height: 64px; padding: 6px 10px; }
+#scene-game #dockActions .ui-button { padding: 0 8px; font-size: 11px; }
+#scene-game .card { padding: 14px; }
+#scene-game .card h1 { font-size: 20px; }
+#scene-game .mods { grid-template-columns: 1fr; }
+}
