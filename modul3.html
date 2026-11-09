@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modul 3 - Memilih APD | K3 Bongkar Muat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<section id="scene-12" class="scene active">
+    <header class="app-bar">
+        <div class="brand">K3 BONGKAR MUAT</div>
+        <span class="crumb">Modul 3 &middot; Jenis APD</span>
+        
+        <!-- Widget Progres Real-Time -->
+        <div style="display:flex; align-items:center; gap:8px; font-size:13px; background:rgba(255,255,255,0.15); padding:4px 12px; border-radius:20px;">
+            <span>Progres: <strong data-mod-pct="3">0%</strong></span>
+            <div class="bar" style="width:80px; height:6px; margin:0;"><span data-mod-fill="3"></span></div>
+        </div>
+
+        <div class="app-nav">
+            <button class="btn btn-ghost" id="btn-sound" type="button" title="Suara On/Off">🔊 Sound</button>
+            <button class="btn btn-primary" type="button" data-go="scene-13">Kuis</button>
+            <button class="btn btn-ghost" type="button" data-go="scene-02">Menu</button>
+        </div>
+    </header>
+    <div class="page">
+        <h1>Peralatan Pelindung Diri (APD) Wajib</h1>
+        <p class="lead">Klik titik pada gambar pekerja, atau pilih dari daftar, untuk melihat fungsi tiap APD.</p>
+        <div class="cols">
+            <div>
+                <div class="stage apd-stage">
+                    <svg viewBox="0 0 220 400" role="img" aria-label="Ilustrasi pekerja dengan lima APD wajib">
+                        <rect width="220" height="400" fill="#e9eef5"/>
+                        <rect y="376" width="220" height="24" fill="#c5cedb"/>
+                        <rect x="80" y="220" width="28" height="130" fill="#34495e"/><rect x="112" y="220" width="28" height="130" fill="#34495e"/>
+                        <rect x="72" y="346" width="40" height="28" rx="6" fill="#2b2b2b"/><rect x="108" y="346" width="40" height="28" rx="6" fill="#2b2b2b"/>
+                        <rect x="48" y="104" width="26" height="100" rx="10" fill="#3b7ea1"/><rect x="146" y="104" width="26" height="100" rx="10" fill="#3b7ea1"/>
+                        <circle cx="60" cy="214" r="14" fill="#e67e22"/><circle cx="160" cy="214" r="14" fill="#e67e22"/>
+                        <rect x="72" y="100" width="76" height="124" rx="10" fill="#3b7ea1"/>
+                        <path d="M84 100h14l12 30 12-30h14v124H84z" fill="#c6f135"/><rect x="84" y="158" width="52" height="7" fill="#fff"/><rect x="84" y="186" width="52" height="7" fill="#fff"/>
+                        <circle cx="110" cy="70" r="27" fill="#f0c9a0"/>
+                        <rect x="92" y="68" width="36" height="9" rx="4" fill="#8cc8f0" stroke="#3a5a78" stroke-width="1.5"/>
+                        <rect x="94" y="80" width="32" height="14" rx="6" fill="#f2f5f9" stroke="#b7c2d1"/>
+                        <path d="M76 64a34 34 0 0 1 68 0z" fill="#f5b82e"/><rect x="70" y="62" width="80" height="8" rx="3" fill="#e0a010"/>
+                        <path d="M84 70v22M136 70v22" stroke="#d8dde5" stroke-width="2"/>
+                    </svg>
+                    <button class="hs" style="--x:50%;--y:14%" data-apd="helm" aria-label="Helm safety"></button>
+                    <button class="hs" style="--x:50%;--y:20%" data-apd="kacamata" aria-label="Masker dan kacamata"></button>
+                    <button class="hs" style="--x:50%;--y:40%" data-apd="rompi" aria-label="Rompi high-vis"></button>
+                    <button class="hs" style="--x:27%;--y:53%" data-apd="sarung" aria-label="Sarung tangan"></button>
+                    <button class="hs" style="--x:43%;--y:90%" data-apd="sepatu" aria-label="Sepatu safety"></button>
+                </div>
+            </div>
+            <div>
+                <div class="panel accent" id="apd-detail" aria-live="polite"><p class="fine" style="margin:0">Pilih salah satu APD untuk melihat detailnya.</p></div>
+                <div class="apd-list" id="apd-list">
+                    <button type="button" data-apd="helm">Helm Safety</button>
+                    <button type="button" data-apd="kacamata">Masker &amp; Kacamata</button>
+                    <button type="button" data-apd="rompi">Rompi High-Vis</button>
+                    <button type="button" data-apd="sarung">Sarung Tangan Kerja</button>
+                    <button type="button" data-apd="sepatu">Sepatu Safety</button>
+                </div>
+            </div>
+        </div>
+        <div class="actions split">
+            <button class="btn btn-secondary" type="button" data-go="scene-02">&larr; Menu</button>
+            <button class="btn btn-primary" type="button" data-go="scene-13">Latihan APD &rarr;</button>
+        </div>
+    </div>
+</section>
+
+<section id="scene-13" class="scene">
+    <header class="app-bar">
+        <div class="brand">K3 BONGKAR MUAT</div>
+        <span class="crumb">Modul 3 &middot; Latihan Pilih APD</span>
+        
+        <div style="display:flex; align-items:center; gap:8px; font-size:13px; background:rgba(255,255,255,0.15); padding:4px 12px; border-radius:20px;">
+            <span>Progres: <strong data-mod-pct="3">0%</strong></span>
+            <div class="bar" style="width:80px; height:6px; margin:0;"><span data-mod-fill="3"></span></div>
+        </div>
+
+        <div class="app-nav">
+            <button class="btn btn-ghost" id="btn-sound" type="button" title="Suara On/Off">🔊 Sound</button>
+            <button class="btn btn-primary" type="button" data-go="scene-13">Kuis</button>
+            <button class="btn btn-ghost" type="button" data-go="scene-02">Menu</button>
+        </div>
+    </header>
+    <div class="page narrow">
+        <h1>Skenario</h1>
+        <div class="scenario-box" style="margin:16px 0">Kamu akan membongkar muatan dari truk fuso di area gudang yang dilalui forklift. <strong>Pilih semua APD wajib.</strong></div>
+        <div class="apd-grid" id="apd-grid">
+            <button class="apd-card" type="button" data-correct="1" aria-pressed="false">Helm Safety</button>
+            <button class="apd-card" type="button" data-correct="1" aria-pressed="false">Sepatu Safety</button>
+            <button class="apd-card" type="button" data-correct="1" aria-pressed="false">Rompi High-Vis</button>
+            <button class="apd-card" type="button" data-correct="1" aria-pressed="false">Sarung Tangan</button>
+            <button class="apd-card" type="button" data-correct="1" aria-pressed="false">Masker &amp; Kacamata</button>
+            <button class="apd-card" type="button" data-correct="0" aria-pressed="false">Sandal Jepit</button>
+            <button class="apd-card" type="button" data-correct="0" aria-pressed="false">Topi Kain</button>
+            <button class="apd-card" type="button" data-correct="0" aria-pressed="false">Jaket Tebal</button>
+        </div>
+        <p style="margin-top:16px"><strong>Dipilih: <span id="apd-selected-count">0</span> APD</strong></p>
+        <div class="msg" id="apd-feedback" aria-live="polite"></div>
+        <div class="actions split">
+            <button class="btn btn-secondary" type="button" data-go="scene-12">&larr; Kembali</button>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;">
+                <button class="btn btn-secondary" type="button" id="btn-check-apd">Periksa Jawaban</button>
+                <button class="btn btn-success" type="button" id="btn-finish-m3" hidden>Selesai Modul 3 &#10003;</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<audio id="bgm-player" loop preload="auto">
+    <source src="assets/audio/bgm.mp3" type="audio/mpeg">
+</audio>
+<script src="js/app.js"></script>
+</body>
+</html>

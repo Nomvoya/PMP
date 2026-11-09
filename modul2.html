@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modul 2 - Identifikasi &amp; Pengendalian Bahaya | K3 Bongkar Muat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<section id="scene-06" class="scene active">
+    <header class="app-bar">
+        <div class="brand">K3 BONGKAR MUAT</div>
+        <span class="crumb">Modul 2 &middot; Hazard vs Risk</span>
+        
+        <!-- Widget Progres Real-Time -->
+        <div style="display:flex; align-items:center; gap:8px; font-size:13px; background:rgba(255,255,255,0.15); padding:4px 12px; border-radius:20px;">
+            <span>Progres: <strong data-mod-pct="2">0%</strong></span>
+            <div class="bar" style="width:80px; height:6px; margin:0;"><span data-mod-fill="2"></span></div>
+        </div>
+
+        <div class="app-nav">
+            <button class="btn btn-ghost" id="btn-sound" type="button" title="Suara On/Off">🔊 Sound</button>
+            <button class="btn btn-primary" type="button" data-go="scene-11b">Kuis</button>
+            <button class="btn btn-ghost" type="button" data-go="scene-02">Menu</button>
+        </div>
+    </header>
+    <div class="page">
+        <div class="eyebrow">Langkah 1 dari 6 &middot; Modul 2: Bahaya &amp; Risiko</div>
+        
+        <div class="m2-card">
+            <div class="m2-grid">
+                <div class="m2-content-col">
+                    <h1 class="m2-header-title">Perbedaan Hazard dan Risk</h1>
+                    <p class="m2-lead">Dua istilah K3 yang saling berhubungan erat namun memiliki makna yang mendasar dan berbeda dalam manajemen keselamatan kerja.</p>
+                    <div class="m2-source">Sumber: PP No. 50 Tahun 2012 &amp; OHSAS 18001 / ISO 45001</div>
+                    
+                    <div class="hvr-interactive">
+                        <div class="hvr-callout" id="hvr-callout-box" aria-live="polite">
+                            <strong id="hvr-callout-title">&#9888;&#65039; HAZARD (Bahaya)</strong>
+                            <p id="hvr-callout-desc">Segala sumber, situasi, atau aktivitas yang berpotensi menimbulkan cedera, penyakit akibat kerja, kerusakan peralatan, atau gangguan lingkungan.</p>
+                            <div class="hvr-callout-example" id="hvr-callout-example">
+                                <strong>Contoh di Gudang:</strong> Genangan oli di lantai, tumpukan palet miring, atau forklift melintas tanpa klakson.
+                            </div>
+                        </div>
+                        
+                        <div class="hvr-pills" role="group" aria-label="Pilih topik perbedaan">
+                            <button type="button" class="hvr-pill active" data-hvr="hazard">Hazard (Bahaya)</button>
+                            <button type="button" class="hvr-pill" data-hvr="risk">Risk (Risiko)</button>
+                            <button type="button" class="hvr-pill" data-hvr="formula">Rumus Risiko</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="video-box-panel">
+                    <div class="video-wrapper">
+                        <video id="video-m2" class="video-player" controls preload="metadata" playsinline>
+                            <source src="assets/Modul2.mp4" type="video/mp4">
+                            Browser Anda tidak mendukung pemutaran video HTML5.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-split">
+            <button class="btn btn-secondary" type="button" data-go="scene-02">&lt; Menu</button>
+            <button class="btn btn-primary" type="button" data-go="scene-07" data-mark="2:hvr">Lanjut &gt;</button>
+        </div>
+    </div>
+</section>
+
+<section id="scene-07" class="scene">
+    <header class="app-bar">
+        <div class="brand">K3 BONGKAR MUAT</div>
+        <span class="crumb">Modul 2 &middot; Identifikasi Bahaya</span>
+        
+        <div style="display:flex; align-items:center; gap:8px; font-size:13px; background:rgba(255,255,255,0.15); padding:4px 12px; border-radius:20px;">
+            <span>Progres: <strong data-mod-pct="2">0%</strong></span>
+            <div class="bar" style="width:80px; height:6px; margin:0;"><span data-mod-fill="2"></span></div>
+        </div>
+
+        <div class="app-nav">
+            <button class="btn btn-ghost" id="btn-sound" type="button" title="Suara On/Off">🔊 Sound</button>
+            <button class="btn btn-primary" type="button" data-go="scene-11b">Kuis</button>
+            <button class="btn btn-ghost" type="button" data-go="scene-02">Menu</button>
+        </div>
+    </header>
+    <div class="page">
+        <div class="eyebrow">Langkah 2 dari 6</div>
+        <h1>6 Tahap Identifikasi Bahaya</h1>
+        <p class="lead">Pilih nomor untuk melihat tiap tahap.</p>
+        <div class="steps" id="steps"></div>
+        <div class="panel accent" aria-live="polite"><h3 id="step-title">Pilih tahap di atas</h3><p id="step-desc" style="margin:0">Detail tiap tahap identifikasi bahaya akan tampil di sini.</p></div>
+
+        <div class="section">
+            <h2>Metode Identifikasi</h2>
+            <div class="term-grid">
+                <div class="term"><strong>Observasi</strong><span>Mengamati pekerjaan dan kondisi tempat kerja.</span></div>
+                <div class="term"><strong>Wawancara</strong><span>Menanyakan pengalaman pekerja terhadap kondisi berbahaya.</span></div>
+                <div class="term"><strong>Inspeksi</strong><span>Mengecek kondisi fasilitas dan peralatan.</span></div>
+                <div class="term"><strong>Riwayat Kecelakaan</strong><span>Mempelajari kecelakaan atau near-miss yang pernah terjadi.</span></div>
+                <div class="term"><strong>JSA</strong><span>Memecah pekerjaan menjadi langkah-langkah untuk mengidentifikasi bahayanya.</span></div>
+            </div>
+        </div>
+        <div class="actions split">
+            <button class="btn btn-secondary" type="button" data-go="scene-06">&larr; Kembali</button>
+            <button class="btn btn-primary" type="button" data-go="scene-08" id="btn-to-find">Ke Latihan &rarr;</button>
+        </div>
+    </div>
+</section>
+
+<section id="scene-08" class="scene">
+    <header class="app-bar">
+        <div class="brand">K3 BONGKAR MUAT</div>
+        <span class="crumb">Modul 2 &middot; Temukan Bahaya</span>
+        
+        <div style="display:flex; align-items:center; gap:8px; font-size:13px; background:rgba(255,255,255,0.15); padding:4px 12px; border-radius:20px;">
+            <span>Progres: <strong data-mod-pct="2">0%</strong></span>
+            <div class="bar" style="width:80px; height:6px; margin:0;"><span data-mod-fill="2"></span></div>
+        </div>
+
+        <div class="app-nav">
+            <button class="btn btn-ghost" id="btn-sound" type="button" title="Suara On/Off">🔊 Sound</button>
+            <button class="btn btn-primary" type="button" data-go="scene-11b">Kuis</button>
+            <button class="btn btn-ghost" type="button" data-go="scene-02">Menu</button>
+        </div>
+    </header>
+    <div class="page narrow">
+        <div class="eyebrow">Langkah 3 dari 6</div>
+        <h1>Temukan 5 Bahaya di Area Kerja</h1>
+        <p class="lead">Klik titik yang menurut Anda berbahaya. Ditemukan: <span class="counter" id="hazard-count">0</span>/5</p>
+        <div class="stage">
+            <svg viewBox="0 0 800 400" role="img" aria-label="Ilustrasi area bongkar muat dengan lima potensi bahaya">
+                <rect width="800" height="400" fill="#e9eef5"/>
+                <rect y="288" width="800" height="112" fill="#c5cedb"/>
+                <rect y="285" width="800" height="5" fill="#aab5c5"/>
+                <g fill="#f5c542"><rect x="300" y="352" width="260" height="5"/><rect x="300" y="384" width="260" height="5"/></g>
+                <g>
+                    <rect x="40" y="92" width="8" height="196" fill="#5f6f85"/><rect x="232" y="92" width="8" height="196" fill="#5f6f85"/>
+                    <rect x="40" y="130" width="200" height="8" fill="#8190a5"/><rect x="40" y="200" width="200" height="8" fill="#8190a5"/><rect x="40" y="270" width="200" height="8" fill="#8190a5"/>
+                    <g fill="#d2a15f" stroke="#9a6f33" stroke-width="1.5"><rect x="56" y="150" width="50" height="50"/><rect x="112" y="160" width="60" height="40"/><rect x="180" y="150" width="44" height="50"/><rect x="56" y="222" width="70" height="48"/><rect x="134" y="228" width="60" height="42"/></g>
+                    <g transform="rotate(-14 140 92)" fill="#d2a15f" stroke="#9a6f33" stroke-width="1.5"><rect x="96" y="92" width="88" height="38"/><rect x="108" y="58" width="64" height="34"/></g>
+                </g>
+                <ellipse cx="270" cy="338" rx="50" ry="12" fill="#1f2630" opacity=".88"/><ellipse cx="256" cy="335" rx="16" ry="3" fill="#7a7fb0" opacity=".6"/>
+                <g>
+                    <rect x="384" y="292" width="110" height="44" rx="4" fill="#f1c40f"/><rect x="384" y="292" width="26" height="44" fill="#2f3a4d"/>
+                    <rect x="414" y="248" width="52" height="44" fill="none" stroke="#333" stroke-width="4"/><circle cx="440" cy="268" r="8" fill="#f0c9a0"/>
+                    <rect x="494" y="228" width="9" height="110" fill="#3a4352"/><rect x="494" y="330" width="46" height="6" fill="#5b6575"/>
+                    <circle cx="410" cy="340" r="16" fill="#222"/><circle cx="474" cy="340" r="16" fill="#222"/>
+                </g>
+                <g><rect x="570" y="296" width="24" height="42" rx="4" fill="#3b7ea1"/><circle cx="582" cy="284" r="10" fill="#f0c9a0"/><path d="M571 282a11 11 0 0 1 22 0z" fill="#f5b82e"/><rect x="573" y="336" width="8" height="22" fill="#34495e"/><rect x="584" y="336" width="8" height="22" fill="#34495e"/></g>
+                <path d="M610 360 C640 338 680 380 735 354" fill="none" stroke="#222" stroke-width="5" stroke-linecap="round"/><rect x="728" y="346" width="14" height="14" rx="2" fill="#555"/>
+                <g><rect x="700" y="112" width="76" height="176" fill="#dfe6ee" stroke="#2e8b57" stroke-width="3"/><rect x="712" y="88" width="52" height="18" rx="3" fill="#2e8b57"/><text x="738" y="101" font-family="Roboto,sans-serif" font-size="11" font-weight="700" fill="#fff" text-anchor="middle">EXIT</text>
+                <g fill="#d2a15f" stroke="#9a6f33" stroke-width="1.5"><rect x="692" y="236" width="56" height="52"/><rect x="738" y="248" width="46" height="40"/><rect x="706" y="196" width="40" height="40"/></g></g>
+            </svg>
+            <button class="hs" style="--x:19%;--y:18%" data-h="0" aria-label="Titik bahaya: tumpukan di rak"></button>
+            <button class="hs" style="--x:34%;--y:84%" data-h="1" aria-label="Titik bahaya: genangan di lantai"></button>
+            <button class="hs" style="--x:73%;--y:78%" data-h="2" aria-label="Titik bahaya: pekerja dekat forklift"></button>
+            <button class="hs" style="--x:84%;--y:90%" data-h="3" aria-label="Titik bahaya: kabel di lantai"></button>
+            <button class="hs" style="--x:92%;--y:50%" data-h="4" aria-label="Titik bahaya: pintu darurat"></button>
+        </div>
+        <ul class="found-list" id="hazard-found" aria-live="polite"></ul>
+        <div class="actions split">
+            <button class="btn btn-secondary" type="button" data-go="scene-07">&larr; Kembali</button>
+            <button class="btn btn-primary" type="button" data-go="scene-09" id="btn-after-find" hidden>Lanjut &rarr;</button>
+        </div>
+    </div>
+</section>
+
+<section id="scene-09" class="scene">
+    <header class="app-bar">
+        <div class="brand">K3 BONGKAR MUAT</div>
+        <span class="crumb">Modul 2 &middot; Penilaian Risiko</span>
+        
+        <div style="display:flex; align-items:center; gap:8px; font-size:13px; background:rgba(255,255,255,0.15); padding:4px 12px; border-radius:20px;">
+            <span>Progres: <strong data-mod-pct="2">0%</strong></span>
+            <div class="bar" style="width:80px; height:6px; margin:0;"><span data-mod-fill="2"></span></div>
+        </div>
+
+        <div class="app-nav">
+            <button class="btn btn-ghost" id="btn-sound" type="button" title="Suara On/Off">🔊 Sound</button>
+            <button class="btn btn-primary" type="button" data-go="scene-11b">Kuis</button>
+            <button class="btn btn-ghost" type="button" data-go="scene-02">Menu</button>
+        </div>
+    </header>
+    <div class="page narrow">
+        <div class="eyebrow">Langkah 4 dari 6</div>
+        <h1>Penilaian Risiko Sederhana</h1>
+        <p class="lead">Pilih satu kartu, lalu pilih tingkat risikonya.</p>
+        <div class="pick-row" id="risk-picks">
+            <button class="pick" type="button" data-risk="rendah">Barang kecil di jalur</button>
+            <button class="pick" type="button" data-risk="sedang">Tumpahan oli sedikit</button>
+            <button class="pick" type="button" data-risk="tinggi">Pekerja di jalur forklift</button>
+        </div>
+        <div class="risk-cols" id="risk-cols">
+            <button class="risk-col lvl-rendah" type="button" data-level="rendah"><strong>RENDAH</strong></button>
+            <button class="risk-col lvl-sedang" type="button" data-level="sedang"><strong>SEDANG</strong></button>
+            <button class="risk-col lvl-tinggi" type="button" data-level="tinggi"><strong>TINGGI</strong></button>
+        </div>
+        <div class="msg" id="risk-msg" aria-live="polite"></div>
+
+        <div class="section">
+            <h2>Prinsip STOP &ndash; THINK &ndash; ACT</h2>
+            <div class="sta">
+                <div class="s1"><strong>STOP</strong>Henti saat tidak aman</div>
+                <div class="s2"><strong>THINK</strong>Nilai bahaya &amp; dampak</div>
+                <div class="s3"><strong>ACT</strong>Lapor, amankan, perbaiki</div>
+            </div>
+        </div>
+        <div class="actions split">
+            <button class="btn btn-secondary" type="button" data-go="scene-08">&larr; Kembali</button>
+            <button class="btn btn-primary" type="button" data-go="scene-10" id="btn-after-risk" hidden>Lanjut &rarr;</button>
+        </div>
+    </div>
+</section>
+
+<section id="scene-10" class="scene">
+    <header class="app-bar">
+        <div class="brand">K3 BONGKAR MUAT</div>
+        <span class="crumb">Modul 2 &middot; Pengendalian Risiko</span>
+        
+        <div style="display:flex; align-items:center; gap:8px; font-size:13px; background:rgba(255,255,255,0.15); padding:4px 12px; border-radius:20px;">
+            <span>Progres: <strong data-mod-pct="2">0%</strong></span>
+            <div class="bar" style="width:80px; height:6px; margin:0;"><span data-mod-fill="2"></span></div>
+        </div>
+
+        <div class="app-nav">
+            <button class="btn btn-ghost" id="btn-sound" type="button" title="Suara On/Off">🔊 Sound</button>
+            <button class="btn btn-primary" type="button" data-go="scene-11b">Kuis</button>
+            <button class="btn btn-ghost" type="button" data-go="scene-02">Menu</button>
+        </div>
+    </header>
+    <div class="page">
+        <div class="eyebrow">Langkah 5 dari 6</div>
+        <h1>Pengendalian Risiko</h1>
+        <p class="lead">Pilih topik untuk melihat pengendalian risiko dan langkah pencegahannya.</p>
+        <div class="control-layout">
+            <div class="control-topics" role="tablist" aria-label="Topik pengendalian risiko" data-complete="2:kendali">
+                <button class="control-topic" id="tab-m2-1" role="tab" type="button" data-tab="m2-1" aria-controls="m2-1" aria-selected="true" tabindex="0">
+                    <span class="control-topic-icon" aria-hidden="true">↕</span><span>Manual Handling</span><span class="control-topic-number">1</span>
+                </button>
+                <button class="control-topic" id="tab-m2-2" role="tab" type="button" data-tab="m2-2" aria-controls="m2-2" aria-selected="false" tabindex="-1">
+                    <span class="control-topic-icon" aria-hidden="true">⚠</span><span>Lalu Lintas &amp; Alat Berat</span><span class="control-topic-number">2</span>
+                </button>
+                <button class="control-topic" id="tab-m2-3" role="tab" type="button" data-tab="m2-3" aria-controls="m2-3" aria-selected="false" tabindex="-1">
+                    <span class="control-topic-icon" aria-hidden="true">▤</span><span>Material &amp; Tumpukan</span><span class="control-topic-number">3</span>
+                </button>
+                <button class="control-topic" id="tab-m2-4" role="tab" type="button" data-tab="m2-4" aria-controls="m2-4" aria-selected="false" tabindex="-1">
+                    <span class="control-topic-icon" aria-hidden="true">✋</span><span>Terjepit</span><span class="control-topic-number">4</span>
+                </button>
+                <button class="control-topic" id="tab-m2-5" role="tab" type="button" data-tab="m2-5" aria-controls="m2-5" aria-selected="false" tabindex="-1">
+                    <span class="control-topic-icon" aria-hidden="true">↓</span><span>Terjatuh</span><span class="control-topic-number">5</span>
+                </button>
+            </div>
+            <div class="control-panels">
+                <section id="m2-1" role="tabpanel" aria-labelledby="tab-m2-1" class="control-panel">
+                    <h2>Bahaya Manual Handling (Pengangkatan Manual)</h2>
+                    <div class="control-guides">
+                        <details class="control-guide" open>
+                            <summary>Pengendalian Risiko</summary>
+                            <ul><li>Kurangi pengangkatan manual untuk barang berat.</li><li>Gunakan alat bantu seperti forklift atau hand pallet.</li><li>Minta bantuan untuk barang yang tidak aman diangkat sendiri.</li></ul>
+                        </details>
+                        <details class="control-guide prevention" open>
+                            <summary>Langkah Pencegahan</summary>
+                            <ul><li>Periksa berat, ukuran, dan kondisi barang.</li><li>Tekuk lutut, punggung tetap tegak, dan angkat dengan kaki.</li><li>Pastikan jalur bebas hambatan sebelum memindahkan barang.</li><li>Gunakan sarung tangan dan sepatu safety.</li></ul>
+                        </details>
+                    </div>
+                    <div class="control-reminder"><span aria-hidden="true">📦</span><strong>Tekuk lutut, jaga punggung tetap tegak, dan dekatkan beban ke tubuh.</strong></div>
+                </section>
+                <section id="m2-2" role="tabpanel" aria-labelledby="tab-m2-2" class="control-panel" hidden>
+                    <h2>Bahaya Lalu Lintas &amp; Alat Berat</h2>
+                    <div class="control-guides">
+                        <details class="control-guide" open>
+                            <summary>Pengendalian Risiko</summary>
+                            <ul><li>Pisahkan jalur pejalan kaki dan jalur forklift.</li><li>Atur batas kecepatan dan arah pergerakan alat.</li><li>Gunakan klakson, lampu, dan rambu pada titik rawan.</li></ul>
+                        </details>
+                        <details class="control-guide prevention" open>
+                            <summary>Langkah Pencegahan</summary>
+                            <ul><li>Berjalan hanya di jalur yang sudah ditentukan.</li><li>Gunakan rompi high-visibility.</li><li>Berhenti di tempat aman dan lakukan kontak mata dengan operator.</li><li>Tunggu alat berhenti sebelum melintas.</li></ul>
+                        </details>
+                    </div>
+                    <div class="control-reminder"><span aria-hidden="true">🚧</span><strong>Jangan melintas di dekat forklift sebelum operator melihat dan memberi tanda aman.</strong></div>
+                </section>
+                <section id="m2-3" role="tabpanel" aria-labelledby="tab-m2-3" class="control-panel" hidden>
+                    <h2>Bahaya Material &amp; Tumpukan</h2>
+                    <div class="control-guides">
+                        <details class="control-guide" open>
+                            <summary>Pengendalian Risiko</summary>
+                            <ul><li>Susun material dengan stabil dan tidak melebihi kapasitas rak.</li><li>Letakkan barang berat di bagian bawah.</li><li>Gunakan pengikat untuk menjaga muatan tidak bergeser.</li></ul>
+                        </details>
+                        <details class="control-guide prevention" open>
+                            <summary>Langkah Pencegahan</summary>
+                            <ul><li>Periksa kondisi palet dan rak sebelum digunakan.</li><li>Jaga jarak aman dari tumpukan dan jalur alat.</li><li>Jangan berdiri di bawah muatan yang terangkat.</li><li>Gunakan helm safety di area penyimpanan.</li></ul>
+                        </details>
+                    </div>
+                    <div class="control-reminder"><span aria-hidden="true">📦</span><strong>Pastikan tumpukan stabil dan jangan mengambil barang dari bawah tumpukan yang tidak aman.</strong></div>
+                </section>
+                <section id="m2-4" role="tabpanel" aria-labelledby="tab-m2-4" class="control-panel" hidden>
+                    <h2>Bahaya Titik Terjepit</h2>
+                    <div class="control-guides">
+                        <details class="control-guide" open>
+                            <summary>Pengendalian Risiko</summary>
+                            <ul><li>Kenali dan beri tanda pada celah atau titik jepit.</li><li>Jaga jarak aman antara muatan, rak, dan dinding.</li><li>Hentikan pergerakan muatan sebelum melakukan penyesuaian.</li></ul>
+                        </details>
+                        <details class="control-guide prevention" open>
+                            <summary>Langkah Pencegahan</summary>
+                            <ul><li>Jauhkan tangan dan kaki dari celah saat muatan bergerak.</li><li>Berkoordinasi dengan rekan dan operator alat.</li><li>Jangan berdiri di antara muatan dan permukaan tetap.</li><li>Gunakan sarung tangan dan sepatu safety.</li></ul>
+                        </details>
+                    </div>
+                    <div class="control-reminder"><span aria-hidden="true">✋</span><strong>Jangan menempatkan tangan atau kaki di antara muatan yang sedang bergerak.</strong></div>
+                </section>
+                <section id="m2-5" role="tabpanel" aria-labelledby="tab-m2-5" class="control-panel" hidden>
+                    <h2>Bahaya Terjatuh dan Terpeleset</h2>
+                    <div class="control-guides">
+                        <details class="control-guide" open>
+                            <summary>Pengendalian Risiko</summary>
+                            <ul><li>Segera bersihkan tumpahan oli atau air.</li><li>Jaga lantai dan jalur kerja bebas kabel serta barang.</li><li>Sediakan tangga atau akses naik-turun yang aman.</li></ul>
+                        </details>
+                        <details class="control-guide prevention" open>
+                            <summary>Langkah Pencegahan</summary>
+                            <ul><li>Pasang rambu saat lantai licin atau sedang dibersihkan.</li><li>Gunakan sepatu safety dengan sol anti-slip.</li><li>Gunakan tiga titik tumpu saat naik atau turun dari kendaraan.</li><li>Jangan melompat dari bak truk.</li></ul>
+                        </details>
+                    </div>
+                    <div class="control-reminder"><span aria-hidden="true">⚠</span><strong>Jaga jalur tetap bersih, pijak dengan mantap, dan gunakan akses naik-turun yang aman.</strong></div>
+                </section>
+            </div>
+        </div>
+        <dialog id="control-guide-dialog" aria-labelledby="control-guide-title">
+            <div class="dlg control-guide-dialog-content">
+                <div class="dlg-head">
+                    <h2 id="control-guide-title"></h2>
+                    <button class="dlg-close" type="button" aria-label="Tutup">&times;</button>
+                </div>
+                <div class="control-guide-dialog-tabs" role="group" aria-label="Pilih informasi">
+                    <button class="control-guide-dialog-tab" type="button" data-guide-kind="control">Pengendalian Risiko</button>
+                    <button class="control-guide-dialog-tab" type="button" data-guide-kind="prevention">Langkah Pencegahan</button>
+                </div>
+                <div id="control-guide-dialog-body"></div>
+            </div>
+        </dialog>
+        <div class="actions split">
+            <button class="btn btn-secondary" type="button" data-go="scene-09">&larr; Kembali</button>
+            <button class="btn btn-primary" type="button" data-go="scene-11">Lanjut &rarr;</button>
+        </div>
+    </div>
+</section>
+
+<section id="scene-11" class="scene">
+    <header class="app-bar">
+        <div class="brand">K3 BONGKAR MUAT</div>
+        <span class="crumb">Modul 2 &middot; Pelaporan &amp; Darurat</span>
+        
+        <div style="display:flex; align-items:center; gap:8px; font-size:13px; background:rgba(255,255,255,0.15); padding:4px 12px; border-radius:20px;">
+            <span>Progres: <strong data-mod-pct="2">0%</strong></span>
+            <div class="bar" style="width:80px; height:6px; margin:0;"><span data-mod-fill="2"></span></div>
+        </div>
+
+        <div class="app-nav">
+            <button class="btn btn-ghost" id="btn-sound" type="button" title="Suara On/Off">🔊 Sound</button>
+            <button class="btn btn-primary" type="button" data-go="scene-11b">Kuis</button>
+            <button class="btn btn-ghost" type="button" data-go="scene-02">Menu</button>
+        </div>
+    </header>
+    <div class="page narrow">
+        <div class="eyebrow">Langkah 6 dari 6</div>
+        <h1>Pelaporan Near-Miss (Hampir Celaka)</h1>
+        <p class="lead">Kejadian hampir celaka adalah peringatan gratis. Laporkan dengan alur berikut.</p>
+        <ol class="flow"><li>Temukan</li><li>Laporkan</li><li>Identifikasi</li><li>Perbaikan</li><li>Pantau</li></ol>
+        <div class="panel accent-red section">
+            <h2 style="color:var(--red)">Tindakan Darurat (P3K)</h2>
+            <ul>
+                <li>Berhenti bekerja dan amankan area (misalnya hentikan forklift).</li>
+                <li>Periksa kondisi korban.</li>
+                <li>Beri pertolongan sesuai kondisi (luka ringan) dengan kotak P3K.</li>
+                <li>Hubungi petugas medis atau penanggung jawab K3.</li>
+                <li>Jangan pindahkan korban cedera serious (jatuh/tertimpa) sembarangan.</li>
+                <li>Laporkan kejadian.</li>
+            </ul>
+        </div>
+        <div class="actions split">
+            <button class="btn btn-secondary" type="button" data-go="scene-10">&larr; Kembali</button>
+            <button class="btn btn-primary" type="button" data-go="scene-11b">Mulai Kuis Modul 2 &rarr;</button>
+        </div>
+    </div>
+</section>
+
+<section id="scene-11b" class="scene">
+    <header class="app-bar">
+        <div class="brand">K3 BONGKAR MUAT</div>
+        <span class="crumb">Modul 2 &middot; Kuis Pilihan Ganda</span>
+        <div style="display:flex; align-items:center; gap:8px; font-size:13px; background:rgba(255,255,255,0.15); padding:4px 12px; border-radius:20px;">
+            <span>Progres: <strong data-mod-pct="2">0%</strong></span>
+            <div class="bar" style="width:80px; height:6px; margin:0;"><span data-mod-fill="2"></span></div>
+        </div>
+        <div class="app-nav">
+            <button class="btn btn-ghost" id="btn-sound" type="button" title="Suara On/Off">🔊 Sound</button>
+            <button class="btn btn-ghost" type="button" data-go="scene-11">&larr; Materi</button>
+            <button class="btn btn-ghost" type="button" data-go="scene-02">Menu</button>
+        </div>
+    </header>
+    <div class="page narrow"><div id="quiz-m2"></div></div>
+</section>
+
+<audio id="bgm-player" loop preload="auto">
+    <source src="assets/audio/bgm.mp3" type="audio/mpeg">
+</audio>
+<script src="js/app.js"></script>
+</body>
+</html>
